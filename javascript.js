@@ -49,6 +49,30 @@ function sortDecreasing(arr){
     
     return arr;
 }
+/*create a sorted copy o an array */
+function copySorted(arr){
+    return arr.slice().sort();
+    //here we used slice without any arguments cause the sort method will modify the original array
+}
+
+/*shuffles the elements in an array*/
+function shuffle(arr){
+    array.sort(() => Math.random() - 0.5); //not optimal solution.
+}
+
+/*filter unique elements in an array */
+function unique(arr){
+    let filtered = [];
+    
+    for(let elem of arr){
+        if(!filtered.includes(elem)){
+            filtered.push(elem);
+        }
+    }
+
+    return filtered;
+}
+
 
 
 
