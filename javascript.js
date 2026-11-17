@@ -73,7 +73,84 @@ function unique(arr){
     return filtered;
 }
 
+//----------------------------------------Exercises the on the foundations directory---------------------------------------------------------
 
+function removeFromArray(arr, ...args) {
+   newarr = [];
 
+   arr.forEach((element) => {
+        if (!args.includes(element)){
+            newarr.push(element);
+        }
+   });
+
+   return newarr;
+};
+
+//------------------------------------------------sum all numbers between two values--------------------------------------------------
+
+function sumAll(val1, val2){
+    sum = [];
+    
+    if(!Number.isInteger(val1) || !Number.isInteger(val2)){
+        return 'ERROR';
+    }
+
+    if(val1 < 0 || val2 <0 ){
+        return 'ERROR'
+    }
+
+    if(val1 > val2){
+        for(let i = val2; i <= val1; i++){
+            sum.push(i)
+        }
+    }
+
+    else if (val1 < val2){
+        for(let i = val1; i <= val2; i++){
+            sum.push(i)
+        }
+    }
+
+    let result = sum.reduce((sum, current) => sum + current);
+
+    console.log(result);
+
+    return result;
+}
+//------------------------------------------------Define leap years--------------------------------------------------
+
+function leapYears(year){
+    if (year%4==0){
+        if (year%100==0 && year%400==0){
+            return true;
+        }
+        else if(year%100==0 && year%400!=0){
+            return false;
+        }else{
+            return true;
+        }
+
+    } else {
+        return false;
+    }
+}
+
+//------------------------------------------------temperature cob=nvertions--------------------------------------------------
+
+function convertToCelsius(far){
+    const celsius = (far-32)/1.8;
+    const round = Math.round(celsius*10)/10;
+    return round;
+}
+
+function convertToFahrenheit(cel){
+    const farenheit = (cel*1.8) + 32;
+    const round = Math.round(farenheit*10)/10;
+    return round;
+}
+
+console.log(convertToCelsius(100));
+console.log(convertToFahrenheit(0));
 
 
